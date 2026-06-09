@@ -46,11 +46,11 @@ type MainAPI =
     :<|> SpecialZone.API
 
 handler :: FlowServer API
-handler =
+handler = (
   mainServer
     :<|> writeSwaggerHTMLFlow
     :<|> writeOpenAPIFlow
-    :<|> serveDirectoryWebApp "swagger"
+    :<|> serveDirectoryWebApp "swagger" )
 
 mainServer :: FlowServer MainAPI
 mainServer =
